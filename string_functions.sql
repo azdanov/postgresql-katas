@@ -74,3 +74,7 @@ SELECT
   concat(author_lname, ',', author_fname) AS author,
   concat(stock_quantity, ' in stock')     AS quantity
 FROM books;
+
+---
+
+DROP TABLE books;

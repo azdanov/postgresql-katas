@@ -76,3 +76,7 @@ SELECT
   name  AS "cat name",
   breed AS "kitty breed"
 FROM cats;
+
+---
+
+DROP TABLE cats;
