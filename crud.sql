@@ -1,6 +1,6 @@
-CREATE SCHEMA cats;
+CREATE SCHEMA cats.cats;
 
-CREATE TABLE cats
+CREATE TABLE cats.cats
 (
   cat_id SERIAL NOT NULL PRIMARY KEY,
   name   TEXT,
@@ -8,7 +8,7 @@ CREATE TABLE cats
   age    INTEGER
 );
 
-INSERT INTO cats (name, breed, age)
+INSERT INTO cats.cats (name, breed, age)
 VALUES ('Ringo', 'Tabby', 4),
   ('Cindy', 'Maine Coon', 10),
   ('Dumbledore', 'Maine Coon', 11),
@@ -20,66 +20,66 @@ VALUES ('Ringo', 'Tabby', 4),
 -- SELECT:
 --
 SELECT *
-FROM cats;
+FROM cats.cats;
 
 SELECT name
-FROM cats;
+FROM cats.cats;
 
 SELECT
   cat_id,
   name,
   age
-FROM cats;
+FROM cats.cats;
 
 -- WHERE:
 --
 SELECT *
-FROM cats
+FROM cats.cats
 WHERE age = 4;
 
 
 SELECT *
-FROM cats
+FROM cats.cats
 WHERE name = 'Egg';
 
 
 SELECT *
-FROM cats
+FROM cats.cats
 WHERE name = 'egG';
 
 -- UPDATE:
 --
-UPDATE cats
+UPDATE cats.cats
 SET breed = 'Shorthair'
 WHERE breed = 'Tabby';
 
-UPDATE cats
+UPDATE cats.cats
 SET age = 14
 WHERE name = 'Misty';
 
 -- DELETE:
 --
-DELETE FROM cats
+DELETE FROM cats.cats
 WHERE name = 'Egg';
 
-DELETE FROM cats
+DELETE FROM cats.cats
 WHERE age = 4;
 
-DELETE FROM cats;
+DELETE FROM cats.cats;
 
 -- Aliases:
 --
 SELECT
   cat_id AS id,
   name
-FROM cats;
+FROM cats.cats;
 
 SELECT
   name  AS "cat name",
   breed AS "kitty breed"
-FROM cats;
+FROM cats.cats;
 
 ---
 
-DROP TABLE cats;
+DROP TABLE cats.cats;
 DROP SCHEMA cats;
