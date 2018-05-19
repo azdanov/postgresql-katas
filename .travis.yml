@@ -1,0 +1,9 @@
+language: generic
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+script:
+  - psql --username=postgres travis_ci_test < crud.sql
+  - psql --username=postgres travis_ci_test < refining_selection.sql
+  - psql --username=postgres travis_ci_test < string_functions.sql
