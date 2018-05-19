@@ -1,4 +1,4 @@
-CREATE SCHEMA cats.cats;
+CREATE SCHEMA cats;
 
 CREATE TABLE cats.cats
 (
