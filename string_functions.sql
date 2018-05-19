@@ -1,3 +1,5 @@
+CREATE SCHEMA books;
+
 CREATE TABLE books
 (
   book_id        SERIAL NOT NULL PRIMARY KEY,
@@ -78,3 +80,4 @@ FROM books;
 ---
 
 DROP TABLE books;
+DROP SCHEMA books;

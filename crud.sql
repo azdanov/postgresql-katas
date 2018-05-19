@@ -1,3 +1,5 @@
+CREATE SCHEMA cats;
+
 CREATE TABLE cats
 (
   cat_id SERIAL NOT NULL PRIMARY KEY,
@@ -80,3 +82,4 @@ FROM cats;
 ---
 
 DROP TABLE cats;
+DROP SCHEMA cats;

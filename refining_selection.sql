@@ -1,3 +1,5 @@
+CREATE SCHEMA books;
+
 CREATE TABLE books
 (
   book_id        SERIAL NOT NULL PRIMARY KEY,
@@ -182,3 +184,4 @@ ORDER BY 2, 1;
 ---
 
 DROP TABLE books;
+DROP SCHEMA books;
