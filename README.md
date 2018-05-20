@@ -29,4 +29,3 @@ SQL string functions are used primarily for string manipulation, e.g combining s
 | [reverse()](https://www.postgresql.org/docs/10/static/functions-string.html#id-1.5.8.9.7.2.2.33.1.1) | [reverse()](https://github.com/azdanov/postgresql-katas/blob/f6298405a7796a9bc8b1502e1df8d373e5e25b0f/string_functions.sql#L57) |
 | [length()](https://www.postgresql.org/docs/10/static/functions-string.html#id-1.5.8.9.7.2.2.14.1.1) | [length()](https://github.com/azdanov/postgresql-katas/blob/f6298405a7796a9bc8b1502e1df8d373e5e25b0f/string_functions.sql#L62) |
 | [upper()](https://www.postgresql.org/docs/10/static/functions-string.html#id-1.5.8.9.5.2.2.14.1.1) / [lower()](https://www.postgresql.org/docs/10/static/functions-string.html#id-1.5.8.9.5.2.2.5.1.1) | [upper()/lower()](https://github.com/azdanov/postgresql-katas/blob/f6298405a7796a9bc8b1502e1df8d373e5e25b0f/string_functions.sql#L67) |
-g
