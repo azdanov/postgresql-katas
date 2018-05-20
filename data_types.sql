@@ -28,7 +28,7 @@ DROP SCHEMA dogs;
 
 ---
 
--- DECIMAL:
+-- NUMERIC:
 --
 CREATE SCHEMA items;
 CREATE TABLE items.items (
