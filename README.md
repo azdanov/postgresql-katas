@@ -19,7 +19,7 @@ In computer programming, create, read, update, and delete (as an acronym CRUD) a
 
 ## String Functions
 
-SQL string functions are used primarily for string manipulation, e.g combining strings together or replacing certain symbols or words.
+SQL string functions are used primarily for string manipulation, e.g. combining strings together or replacing certain symbols or words.
 
 | [PostgreSQL](https://www.postgresql.org/docs/10/static/functions-string.html) | [string_functions.sql](https://github.com/azdanov/postgresql-katas/blob/master/string_functions.sql) |
 |:---:|:---:|
