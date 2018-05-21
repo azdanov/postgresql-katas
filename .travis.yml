@@ -9,4 +9,4 @@ script:
   - psql --username=postgres travis_ci_test < string_functions.sql
   - psql --username=postgres travis_ci_test < aggregate_functions.sql
   - psql --username=postgres travis_ci_test < data_types.sql
-  - psql --username=postgres travis_ci_test < logica_expressions.sql
+  - psql --username=postgres travis_ci_test < logical_expressions.sql
