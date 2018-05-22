@@ -1,5 +1,6 @@
 CREATE SCHEMA books;
-CREATE TABLE books.books
+SET search_path TO books;
+CREATE TABLE books
 (
   book_id        SERIAL NOT NULL PRIMARY KEY,
   title          TEXT,
@@ -10,7 +11,7 @@ CREATE TABLE books.books
   pages          INTEGER
 );
 
-INSERT INTO books.books (title, author_fname, author_lname, released_year, stock_quantity, pages)
+INSERT INTO books (title, author_fname, author_lname, released_year, stock_quantity, pages)
 VALUES
   ('The Namesake', 'Jhumpa', 'Lahiri', 2003, 32, 291),
   ('Norse Mythology', 'Neil', 'Gaiman', 2016, 43, 304),
@@ -33,18 +34,18 @@ VALUES
   ('Lincoln In The Bardo', 'George', 'Saunders', 2017, 1000, 367);
 
 SELECT *
-FROM books.books;
+FROM books;
 
 -- COUNT:
 --
 SELECT count(*)
-FROM books.books;
+FROM books;
 
 SELECT count(DISTINCT (author_lname, author_fname))
-FROM books.books;
+FROM books;
 
 SELECT count(*)
-FROM books.books
+FROM books
 WHERE title ILIKE '%the%';
 
 -- GROUP BY:
@@ -53,36 +54,36 @@ SELECT
   author_lname,
   author_fname,
   count(*) AS total_books
-FROM books.books
+FROM books
 GROUP BY author_lname, author_fname
 ORDER BY total_books DESC;
 
 SELECT
   released_year,
   count(*) AS total_released_books
-FROM books.books
+FROM books
 GROUP BY released_year
 ORDER BY released_year DESC;
 
 -- MIN/MAX:
 --
 SELECT min(released_year)
-FROM books.books;
+FROM books;
 
 SELECT max(pages)
-FROM books.books;
+FROM books;
 
 SELECT
   title,
   pages
-FROM books.books
+FROM books
 WHERE pages = (SELECT max(pages)
-               FROM books.books);
+               FROM books);
 
 SELECT
   title,
   pages
-FROM books.books
+FROM books
 ORDER BY pages DESC
 LIMIT 1;
 
@@ -90,25 +91,25 @@ SELECT
   author_fname,
   author_lname,
   min(released_year) AS debut_year
-FROM books.books
+FROM books
 GROUP BY 1, 2;
 
 SELECT
   concat(author_fname, ' ', author_lname) AS author,
   max(pages)                              AS maximum_pages
-FROM books.books
+FROM books
 GROUP BY author_lname, author_fname;
 
 -- SUM:
 --
 SELECT sum(pages) AS total_pages
-FROM books.books;
+FROM books;
 
 SELECT
   author_fname,
   author_lname,
   sum(pages) AS total_pages
-FROM books.books
+FROM books
 GROUP BY author_lname, author_fname;
 
 -- AVG:
@@ -116,30 +117,30 @@ GROUP BY author_lname, author_fname;
 SELECT
   released_year,
   avg(stock_quantity) AS average_of_books
-FROM books.books
+FROM books
 GROUP BY released_year;
 
 SELECT
   author_fname,
   author_lname,
   avg(pages) AS average_of_pages
-FROM books.books
+FROM books
 GROUP BY author_lname, author_fname;
 
 ---
 
 SELECT sum(stock_quantity) AS total_stock
-FROM books.books;
+FROM books;
 
 SELECT
   author_fname,
   author_lname,
   avg(released_year) AS average_release_year
-FROM books.books
+FROM books
 GROUP BY author_lname, author_fname;
 
 SELECT concat(author_fname, ' ', author_lname) AS longest_book_author
-FROM books.books
+FROM books
 ORDER BY pages DESC
 LIMIT 1;
 
@@ -147,11 +148,11 @@ SELECT
   released_year AS year,
   count(*)      AS "# books",
   avg(pages)    AS "avg pages"
-FROM books.books
+FROM books
 GROUP BY released_year
 ORDER BY released_year;
 
 ---
 
-DROP TABLE books.books;
+DROP TABLE books;
 DROP SCHEMA books;
