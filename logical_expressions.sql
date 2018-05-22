@@ -1,5 +1,6 @@
 CREATE SCHEMA books;
-CREATE TABLE books.books
+SET search_path TO books;
+CREATE TABLE books
 (
   book_id        SERIAL NOT NULL PRIMARY KEY,
   title          TEXT,
@@ -10,7 +11,7 @@ CREATE TABLE books.books
   pages          INTEGER
 );
 
-INSERT INTO books.books (title, author_fname, author_lname, released_year, stock_quantity, pages)
+INSERT INTO books (title, author_fname, author_lname, released_year, stock_quantity, pages)
 VALUES
   ('The Namesake', 'Jhumpa', 'Lahiri', 2003, 32, 291),
   ('Norse Mythology', 'Neil', 'Gaiman', 2016, 43, 304),
@@ -33,7 +34,7 @@ VALUES
   ('Lincoln In The Bardo', 'George', 'Saunders', 2017, 1000, 367);
 
 SELECT *
-FROM books.books;
+FROM books;
 
 ---
 
@@ -43,20 +44,20 @@ FROM books.books;
 SELECT
   title,
   released_year
-FROM books.books
+FROM books
 WHERE released_year <> 2017;
 
 SELECT
   title,
   released_year
-FROM books.books
+FROM books
 WHERE released_year != 2017;
 
 -- Not LIKE:
 --
 
 SELECT title
-FROM books.books
+FROM books
 WHERE title NOT LIKE 'The%';
 
 -- Greater Than:
@@ -65,7 +66,7 @@ WHERE title NOT LIKE 'The%';
 SELECT
   title,
   released_year
-FROM books.books
+FROM books
 WHERE released_year > 2010;
 
 -- Less Than:
@@ -74,7 +75,7 @@ WHERE released_year > 2010;
 SELECT
   title,
   released_year
-FROM books.books
+FROM books
 WHERE released_year < 2000;
 
 -- Greater / Less Than Or Equal:
@@ -83,13 +84,13 @@ WHERE released_year < 2000;
 SELECT
   title,
   released_year
-FROM books.books
+FROM books
 WHERE released_year <= 2000;
 
 SELECT
   title,
   released_year
-FROM books.books
+FROM books
 WHERE released_year >= 2010;
 
 -- Logical AND:
@@ -98,7 +99,7 @@ WHERE released_year >= 2010;
 SELECT
   title,
   released_year
-FROM books.books
+FROM books
 WHERE author_lname = 'Eggers' AND released_year > 2010;
 
 -- Logical OR:
@@ -107,7 +108,7 @@ WHERE author_lname = 'Eggers' AND released_year > 2010;
 SELECT
   title,
   released_year
-FROM books.books
+FROM books
 WHERE author_lname = 'Eggers' OR author_lname = 'Gaiman';
 
 -- BETWEEN:
@@ -116,13 +117,13 @@ WHERE author_lname = 'Eggers' OR author_lname = 'Gaiman';
 SELECT
   title,
   released_year
-FROM books.books
+FROM books
 WHERE released_year BETWEEN 1990 AND 2000;
 
 SELECT
   title,
   released_year
-FROM books.books
+FROM books
 WHERE released_year NOT BETWEEN 1990 AND 2015;
 
 -- IN:
@@ -131,13 +132,13 @@ WHERE released_year NOT BETWEEN 1990 AND 2015;
 SELECT
   title,
   released_year
-FROM books.books
+FROM books
 WHERE author_lname IN ('Eggers', 'Gaiman');
 
 SELECT
   title,
   released_year
-FROM books.books
+FROM books
 WHERE released_year > 2000
       AND released_year NOT IN
           (2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016); -- Slow
@@ -145,7 +146,7 @@ WHERE released_year > 2000
 SELECT
   title,
   released_year
-FROM books.books
+FROM books
 WHERE released_year >= 2000
       AND released_year % 2 != 0; -- Fast
 
@@ -160,7 +161,7 @@ SELECT
     THEN 'Modern Lit'
   ELSE '20th Century Lit'
   END AS era
-FROM books.books;
+FROM books;
 
 SELECT
   title,
@@ -174,7 +175,7 @@ SELECT
     THEN '***'
   ELSE '****'
   END AS stock
-FROM books.books;
+FROM books;
 
 SELECT
   author_fname,
@@ -184,10 +185,10 @@ SELECT
     THEN '1 book'
   ELSE concat(count(*), ' books')
   END AS count
-FROM books.books
+FROM books
 GROUP BY author_lname, author_fname;
 
 ---
 
-DROP TABLE books.books;
+DROP TABLE books;
 DROP SCHEMA books;
