@@ -1,6 +1,6 @@
 CREATE SCHEMA books;
-
-CREATE TABLE books.books
+SET search_path TO books;
+CREATE TABLE books
 (
   book_id        SERIAL NOT NULL PRIMARY KEY,
   title          TEXT,
@@ -11,7 +11,7 @@ CREATE TABLE books.books
   pages          INTEGER
 );
 
-INSERT INTO books.books (title, author_fname, author_lname, released_year, stock_quantity, pages)
+INSERT INTO books (title, author_fname, author_lname, released_year, stock_quantity, pages)
 VALUES
   ('The Namesake', 'Jhumpa', 'Lahiri', 2003, 32, 291),
   ('Norse Mythology', 'Neil', 'Gaiman', 2016, 43, 304),
@@ -31,43 +31,43 @@ VALUES
   ('Consider the Lobster', 'David', 'Foster Wallace', 2005, 92, 343);
 
 SELECT *
-FROM books.books;
+FROM books;
 
 -- concat:
 --
 SELECT concat(title, '-', author_fname, '-', author_lname)
-FROM books.books;
+FROM books;
 
 SELECT concat_ws(' - ', title, author_fname, author_lname)
-FROM books.books;
+FROM books;
 
 -- substring:
 --
 SELECT substring(title, 1, 10) AS "short title"
-FROM books.books;
+FROM books;
 
 SELECT concat(substring(title, 1, 10), '...') AS "short title"
-FROM books.books;
+FROM books;
 
 -- replace:
 --
 SELECT substring(replace(title, 'e', '3'), 1, 10) AS "l33t string"
-FROM books.books;
+FROM books;
 
 -- reverse:
 --
 SELECT reverse(author_fname)
-FROM books.books;
+FROM books;
 
 -- length:
 --
 SELECT concat(author_lname, ' is ', length(author_lname), ' characters long')
-FROM books.books;
+FROM books;
 
 -- upper/lower:
 --
 SELECT concat(upper(author_lname), ' ', lower(author_fname))
-FROM books.books;
+FROM books;
 
 ---
 
@@ -75,9 +75,9 @@ SELECT
   concat(substring(title, 1, 10), '...')  AS "short title",
   concat(author_lname, ',', author_fname) AS author,
   concat(stock_quantity, ' in stock')     AS quantity
-FROM books.books;
+FROM books;
 
 ---
 
-DROP TABLE books.books;
+DROP TABLE books;
 DROP SCHEMA books;
