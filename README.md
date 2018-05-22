@@ -36,10 +36,10 @@ SQL string functions are used primarily for string manipulation, e.g. combining 
 
 | [PostgreSQL](https://www.postgresql.org/docs/current/static/sql-select.html)                   | [refining_selection.sql](https://github.com/azdanov/postgresql-katas/blob/master/refining_selection.sql) |
 | :--------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------: |
-| [DISTINCT](https://www.postgresql.org/docs/current/static/sql-select.html#SQL-DISTINCT)        | [DISTINCT](https://github.com/azdanov/postgresql-katas/blob/master/refining_selection.sql#L38)           |
-| [ORDER BY](https://www.postgresql.org/docs/current/static/sql-select.html#SQL-ORDERBY)         | [ORDER BY](https://github.com/azdanov/postgresql-katas/blob/master/refining_selection.sql#L48)           |
-| [LIMIT](https://www.postgresql.org/docs/current/static/sql-select.html#SQL-LIMIT)              | [LIMIT](https://github.com/azdanov/postgresql-katas/blob/master/refining_selection.sql#L89)              |
-| [LIKE/ILIKE](https://www.postgresql.org/docs/10/static/functions-matching.html#FUNCTIONS-LIKE) | [LIKE/ILIKE](https://github.com/azdanov/postgresql-katas/blob/master/refining_selection.sql#L115)        |
+| [DISTINCT](https://www.postgresql.org/docs/current/static/sql-select.html#SQL-DISTINCT)        | [DISTINCT](https://github.com/azdanov/postgresql-katas/blob/master/refining_selection.sql#L39)           |
+| [ORDER BY](https://www.postgresql.org/docs/current/static/sql-select.html#SQL-ORDERBY)         | [ORDER BY](https://github.com/azdanov/postgresql-katas/blob/master/refining_selection.sql#L49)           |
+| [LIMIT](https://www.postgresql.org/docs/current/static/sql-select.html#SQL-LIMIT)              | [LIMIT](https://github.com/azdanov/postgresql-katas/blob/master/refining_selection.sql#L90)              |
+| [LIKE/ILIKE](https://www.postgresql.org/docs/10/static/functions-matching.html#FUNCTIONS-LIKE) | [LIKE/ILIKE](https://github.com/azdanov/postgresql-katas/blob/master/refining_selection.sql#L116)        |
 
 ## Aggregate Functions
 
@@ -47,11 +47,11 @@ An aggregate function is a function where the values of multiple rows are groupe
 
 | [PostgreSQL](https://www.postgresql.org/docs/current/static/functions-aggregate.html)                           | [aggregate_functions.sql](https://github.com/azdanov/postgresql-katas/blob/master/aggregate_functions.sql) |
 | :-------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------: |
-| [count()](https://www.postgresql.org/docs/current/static/functions-aggregate.html#id-1.5.8.25.4.2.2.8.1.1)      | [count()](https://github.com/azdanov/postgresql-katas/blob/master/aggregate_functions.sql#L38)             |
-| [GROUP BY](https://www.postgresql.org/docs/current/static/queries-table-expressions.html#QUERIES-GROUPING-SETS) | [GROUP BY](https://github.com/azdanov/postgresql-katas/blob/master/aggregate_functions.sql#L50)            |
-| [min()/max()](https://www.postgresql.org/docs/10/static/functions-aggregate.html#id-1.5.8.25.4.2.2.15.1.1)      | [min()/max()](https://github.com/azdanov/postgresql-katas/blob/master/aggregate_functions.sql#L67)         |
-| [sum()](https://www.postgresql.org/docs/10/static/functions-aggregate.html#id-1.5.8.25.4.2.2.18.1.1)            | [sum()](https://github.com/azdanov/postgresql-katas/blob/master/aggregate_functions.sql#L102)              |
-| [avg()](https://www.postgresql.org/docs/10/static/functions-aggregate.html#id-1.5.8.25.4.2.2.3.1.1)             | [avg()](https://github.com/azdanov/postgresql-katas/blob/master/aggregate_functions.sql#L114)              |
+| [count()](https://www.postgresql.org/docs/current/static/functions-aggregate.html#id-1.5.8.25.4.2.2.8.1.1)      | [count()](https://github.com/azdanov/postgresql-katas/blob/master/aggregate_functions.sql#L39)             |
+| [GROUP BY](https://www.postgresql.org/docs/current/static/queries-table-expressions.html#QUERIES-GROUPING-SETS) | [GROUP BY](https://github.com/azdanov/postgresql-katas/blob/master/aggregate_functions.sql#L51)            |
+| [min()/max()](https://www.postgresql.org/docs/10/static/functions-aggregate.html#id-1.5.8.25.4.2.2.15.1.1)      | [min()/max()](https://github.com/azdanov/postgresql-katas/blob/master/aggregate_functions.sql#L68)         |
+| [sum()](https://www.postgresql.org/docs/10/static/functions-aggregate.html#id-1.5.8.25.4.2.2.18.1.1)            | [sum()](https://github.com/azdanov/postgresql-katas/blob/master/aggregate_functions.sql#L103)              |
+| [avg()](https://www.postgresql.org/docs/10/static/functions-aggregate.html#id-1.5.8.25.4.2.2.3.1.1)             | [avg()](https://github.com/azdanov/postgresql-katas/blob/master/aggregate_functions.sql#L115)              |
 
 ## Data Types
 
@@ -61,13 +61,13 @@ PostgreSQL has a rich set of native data types available to users. Such as _bool
 | :---------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------: |
 | [CHAR/VARCHAR](https://www.postgresql.org/docs/current/static/datatype-character.html)                                                                      | [CHAR/VARCHAR](https://github.com/azdanov/postgresql-katas/blob/master/data_types.sql#L1)                      |
 | [NUMERIC](https://www.postgresql.org/docs/current/static/datatype-numeric.html#DATATYPE-NUMERIC-DECIMAL)                                                    | [NUMERIC](https://github.com/azdanov/postgresql-katas/blob/master/data_types.sql#L31)                          |
-| [FLOAT/DOUBLE](https://www.postgresql.org/docs/current/static/datatype-numeric.html#DATATYPE-FLOAT)                                                         | [FLOAT/DOUBLE](https://github.com/azdanov/postgresql-katas/blob/master/data_types.sql#L66)                     |
-| [DATE/TIME](https://www.postgresql.org/docs/current/static/datatype-datetime.html)                                                                          | [DATE/TIME](https://github.com/azdanov/postgresql-katas/blob/master/data_types.sql#L93)                        |
-| [current_date/current_time/now()](https://www.postgresql.org/docs/current/static/functions-datetime.html#FUNCTIONS-DATETIME-CURRENT)                        | [current_date/current_time/now()](https://github.com/azdanov/postgresql-katas/blob/master/data_types.sql#L116) |
-| [to_char()](https://www.postgresql.org/docs/10/static/functions-formatting.html)                                                                            | [to_char()](https://github.com/azdanov/postgresql-katas/blob/master/data_types.sql#L126)                       |
-| [INTERVAL](https://www.postgresql.org/docs/10/static/functions-datetime.html)                                                                               | [INTERVAL](https://github.com/azdanov/postgresql-katas/blob/master/data_types.sql#L218)                        |
-| [TIMESTAMP](https://www.postgresql.org/docs/10/static/datatype-datetime.html)                                                                               | [TIMESTAMP](https://github.com/azdanov/postgresql-katas/blob/master/data_types.sql#L264)                       |
-| [FUNCTION](https://www.postgresql.org/docs/10/static/sql-createfunction.html) / [TRIGGER](https://www.postgresql.org/docs/10/static/sql-createtrigger.html) | [FUNCTION/TRIGGER](https://github.com/azdanov/postgresql-katas/blob/master/data_types.sql#L282)                |
+| [FLOAT/DOUBLE](https://www.postgresql.org/docs/current/static/datatype-numeric.html#DATATYPE-FLOAT)                                                         | [FLOAT/DOUBLE](https://github.com/azdanov/postgresql-katas/blob/master/data_types.sql#L67)                     |
+| [DATE/TIME](https://www.postgresql.org/docs/current/static/datatype-datetime.html)                                                                          | [DATE/TIME](https://github.com/azdanov/postgresql-katas/blob/master/data_types.sql#L95)                        |
+| [current_date/current_time/now()](https://www.postgresql.org/docs/current/static/functions-datetime.html#FUNCTIONS-DATETIME-CURRENT)                        | [current_date/current_time/now()](https://github.com/azdanov/postgresql-katas/blob/master/data_types.sql#L119) |
+| [to_char()](https://www.postgresql.org/docs/10/static/functions-formatting.html)                                                                            | [to_char()](https://github.com/azdanov/postgresql-katas/blob/master/data_types.sql#L129)                       |
+| [INTERVAL](https://www.postgresql.org/docs/10/static/functions-datetime.html)                                                                               | [INTERVAL](https://github.com/azdanov/postgresql-katas/blob/master/data_types.sql#L221)                        |
+| [TIMESTAMP](https://www.postgresql.org/docs/10/static/datatype-datetime.html)                                                                               | [TIMESTAMP](https://github.com/azdanov/postgresql-katas/blob/master/data_types.sql#L267)                       |
+| [FUNCTION](https://www.postgresql.org/docs/10/static/sql-createfunction.html) / [TRIGGER](https://www.postgresql.org/docs/10/static/sql-createtrigger.html) | [FUNCTION/TRIGGER](https://github.com/azdanov/postgresql-katas/blob/master/data_types.sql#L286)                |
 
 ## Logical Expressions
 
@@ -75,13 +75,13 @@ Logical operators are typically used with [Boolean](https://www.postgresql.org/d
 
 | [PostgreSQL](https://www.postgresql.org/docs/current/static/functions-logical.html)                             | [logical_expressions.sql](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql)        |
 | :-------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: |
-| [NOT Equal](https://www.postgresql.org/docs/current/static/functions-comparison.html)                           | [NOT Equal](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L40)                  |
-| [NOT LIKE](https://www.postgresql.org/docs/current/static/functions-matching.html#FUNCTIONS-LIKE)               | [NOT LIKE](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L55)                   |
-| [Greater Than](https://www.postgresql.org/docs/current/static/functions-comparison.html)                        | [Greater Than](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L62)               |
-| [Less Than](https://www.postgresql.org/docs/current/static/functions-comparison.html)                           | [Less Than](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L71)                  |
-| [Greater/Less Than Or Equal](https://www.postgresql.org/docs/current/static/functions-comparison.html)          | [Greater/Less Than Or Equal](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L80) |
-| [Logical AND](https://www.postgresql.org/docs/current/static/functions-logical.html)                            | [Logical AND](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L95)                |
-| [Logical OR](https://www.postgresql.org/docs/current/static/functions-logical.html)                             | [Logical OR](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L104)                |
-| [BETWEEN](https://www.postgresql.org/docs/current/static/functions-comparison.html)                             | [BETWEEN](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L113)                   |
-| [IN](https://www.postgresql.org/docs/current/static/functions-comparisons.html#FUNCTIONS-COMPARISONS-IN-SCALAR) | [IN](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L128)                        |
-| [CASE](https://www.postgresql.org/docs/current/static/functions-conditional.html#FUNCTIONS-CASE)                | [CASE](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L152)                      |
+| [NOT Equal](https://www.postgresql.org/docs/current/static/functions-comparison.html)                           | [NOT Equal](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L41)                  |
+| [NOT LIKE](https://www.postgresql.org/docs/current/static/functions-matching.html#FUNCTIONS-LIKE)               | [NOT LIKE](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L56)                   |
+| [Greater Than](https://www.postgresql.org/docs/current/static/functions-comparison.html)                        | [Greater Than](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L63)               |
+| [Less Than](https://www.postgresql.org/docs/current/static/functions-comparison.html)                           | [Less Than](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L72)                  |
+| [Greater/Less Than Or Equal](https://www.postgresql.org/docs/current/static/functions-comparison.html)          | [Greater/Less Than Or Equal](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L81) |
+| [Logical AND](https://www.postgresql.org/docs/current/static/functions-logical.html)                            | [Logical AND](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L96)                |
+| [Logical OR](https://www.postgresql.org/docs/current/static/functions-logical.html)                             | [Logical OR](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L105)                |
+| [BETWEEN](https://www.postgresql.org/docs/current/static/functions-comparison.html)                             | [BETWEEN](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L114)                   |
+| [IN](https://www.postgresql.org/docs/current/static/functions-comparisons.html#FUNCTIONS-COMPARISONS-IN-SCALAR) | [IN](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L129)                        |
+| [CASE](https://www.postgresql.org/docs/current/static/functions-conditional.html#FUNCTIONS-CASE)                | [CASE](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L153)                      |
