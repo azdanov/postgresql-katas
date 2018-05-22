@@ -1,5 +1,6 @@
 CREATE SCHEMA books;
-CREATE TABLE books.books
+SET search_path TO books;
+CREATE TABLE books
 (
   book_id        SERIAL NOT NULL PRIMARY KEY,
   title          TEXT,
@@ -10,7 +11,7 @@ CREATE TABLE books.books
   pages          INTEGER
 );
 
-INSERT INTO books.books (title, author_fname, author_lname, released_year, stock_quantity, pages)
+INSERT INTO books (title, author_fname, author_lname, released_year, stock_quantity, pages)
 VALUES
   ('The Namesake', 'Jhumpa', 'Lahiri', 2003, 32, 291),
   ('Norse Mythology', 'Neil', 'Gaiman', 2016, 43, 304),
@@ -33,82 +34,82 @@ VALUES
   ('Lincoln In The Bardo', 'George', 'Saunders', 2017, 1000, 367);
 
 SELECT *
-FROM books.books;
+FROM books;
 
 -- DISTINCT:
 --
 SELECT DISTINCT author_lname
-FROM books.books;
+FROM books;
 
 SELECT DISTINCT
   author_fname,
   author_lname
-FROM books.books;
+FROM books;
 
 -- ORDER BY:
 --
 
 SELECT released_year
-FROM books.books
+FROM books
 ORDER BY released_year;
 
 SELECT released_year
-FROM books.books
+FROM books
 ORDER BY released_year ASC;
 
 SELECT released_year
-FROM books.books
+FROM books
 ORDER BY released_year DESC;
 
 SELECT
   title,
   author_fname,
   author_lname
-FROM books.books
+FROM books
 ORDER BY author_fname;
 
 SELECT
   title,
   author_fname,
   author_lname
-FROM books.books
+FROM books
 ORDER BY 2;
 
 SELECT
   author_fname,
   author_lname
-FROM books.books
+FROM books
 ORDER BY author_lname, author_fname;
 
 SELECT
   author_fname,
   author_lname
-FROM books.books
+FROM books
 ORDER BY 2, 1;
 
 -- LIMIT:
 --
 SELECT title
-FROM books.books
+FROM books
 LIMIT 3;
 
 SELECT
   title,
   released_year
-FROM books.books
+FROM books
 ORDER BY released_year DESC
 LIMIT 5;
 
 SELECT
   title,
   released_year
-FROM books.books
+FROM books
 ORDER BY released_year DESC
 OFFSET 4
 LIMIT 5;
 
 SELECT *
-FROM books.books
+FROM books
 OFFSET 5
 LIMIT ALL;
 
@@ -117,52 +118,52 @@ LIMIT ALL;
 SELECT
   title,
   author_fname
-FROM books.books
+FROM books
 WHERE author_fname LIKE '%da%';
 
 SELECT
   title,
   author_fname
-FROM books.books
+FROM books
 WHERE author_fname ILIKE '%da%';
 
 SELECT title
-FROM books.books
+FROM books
 WHERE title LIKE '%the%';
 
 SELECT title
-FROM books.books
+FROM books
 WHERE title ILIKE 'the%';
 
 SELECT
   title,
   stock_quantity
-FROM books.books
+FROM books
 WHERE cast(stock_quantity AS TEXT) LIKE '____';
 
 SELECT title
-FROM books.books
+FROM books
 WHERE title LIKE '%\%%';
 
 SELECT title
-FROM books.books
+FROM books
 WHERE title LIKE '%\_%';
 
 ---
 
 SELECT title
-FROM books.books
+FROM books
 WHERE title ILIKE '%stories%';
 
 SELECT
   title,
   pages
-FROM books.books
+FROM books
 ORDER BY pages DESC
 LIMIT 1;
 
 SELECT concat(title, ' - ', released_year) AS summary
-FROM books.books
+FROM books
 ORDER BY released_year DESC
 LIMIT 3;
 
@@ -170,17 +171,17 @@ SELECT
   title,
   released_year,
   stock_quantity
-FROM books.books
+FROM books
 ORDER BY stock_quantity
 LIMIT 3;
 
 SELECT
   title,
   author_lname
-FROM books.books
+FROM books
 ORDER BY 2, 1;
 
 ---
 
-DROP TABLE books.books;
+DROP TABLE books;
 DROP SCHEMA books;
