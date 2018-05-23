@@ -85,3 +85,15 @@ Logical operators are typically used with [Boolean](https://www.postgresql.org/d
 | [BETWEEN](https://www.postgresql.org/docs/current/static/functions-comparison.html)                             | [BETWEEN](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L114)                   |
 | [IN](https://www.postgresql.org/docs/current/static/functions-comparisons.html#FUNCTIONS-COMPARISONS-IN-SCALAR) | [IN](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L129)                        |
 | [CASE](https://www.postgresql.org/docs/current/static/functions-conditional.html#FUNCTIONS-CASE)                | [CASE](https://github.com/azdanov/postgresql-katas/blob/master/logical_expressions.sql#L153)                      |
+
+## One-to-Many
+
+In a one-to-many relationship, one record in a table can be associated with one or more records in another table. For example, each customer can have many sales orders.
+
+| [One-to-Many](https://fmhelp.filemaker.com/help/16/fmp/en/index.html#page/FMP_Help/one-to-many-relationships.html)    | [one_to_many.sql](https://github.com/azdanov/postgresql-katas/blob/master/one_to_many.sql)        |
+| :-------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: |
+| [PRIMARY KEY](https://www.postgresql.org/docs/10/static/ddl-constraints.html#DDL-CONSTRAINTS-PRIMARY-KEYS)            | [PRIMARY KEY](https://github.com/azdanov/postgresql-katas/blob/master/one_to_many.sql#L4)         |
+| [FOREIGN KEY](https://www.postgresql.org/docs/10/static/ddl-constraints.html#DDL-CONSTRAINTS-FK)                      | [FOREIGN KEY](https://github.com/azdanov/postgresql-katas/blob/master/one_to_many.sql#L4)         |
+| [JOIN](https://www.postgresql.org/docs/10/static/sql-select.html)                                                     | [JOIN](https://github.com/azdanov/postgresql-katas/blob/master/one_to_many.sql#L67)               |
+| [coalesce()](https://www.postgresql.org/docs/current/static/functions-conditional.html#FUNCTIONS-COALESCE-NVL-IFNULL) | [coalesce()](https://github.com/azdanov/postgresql-katas/blob/master/one_to_many.sql#L156)        |
+| [ON DELETE CASCADE](https://www.postgresql.org/docs/current/static/ddl-constraints.html)                              | [ON DELETE CASCADE](https://github.com/azdanov/postgresql-katas/blob/master/one_to_many.sql#L237) |
