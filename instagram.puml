@@ -1,0 +1,100 @@
+@startuml instagram
+header
+  <font color=red size=24>Simple Instagram Schema</font>
+endheader
+
+skinparam dpi 300
+!define Table(name,desc) class name as "desc" << (T,#FFAAAA) >>
+!define sql(x) <color:#000080>x</color>
+!define field(x) <color:#660e7a>x</color>
+!define function(x) <i><color:black>x<U+0028><U+0029></i>
+!define serial_primary_key(x) <color:#660e7a>x</color> sql(SERIAL PRIMARY KEY)
+!define primary_key(x, y) <color:#000080>PRIMARY KEY <U+0028><color:#660e7a>x, y<U+0029></color>
+!define foreign_key(x, y, z) sql(FOREIGN KEY <U+0028><color:#660e7a>x</color><U+0029> <color:#000080>REFERENCES <color:black>y</color> <U+0028><color:#660e7a>z<U+0029>)
+hide methods
+hide stereotypes
+
+' entities
+
+Table(users, "users") {
+  serial_primary_key(id)
+  field(username) sql(TEXT UNIQUE NOT NULL)
+  field(created_at) sql(TIMESTAMP DEFAULT function(now))
+}
+
+together {
+
+  Table(photos, "photos") {
+    serial_primary_key(id)
+    field(image_url) sql(TEXT NOT NULL)
+    field(user_id) sql(INTEGER NOT NULL)
+    field(created_at) sql(TIMESTAMP DEFAULT function(now))
+    foreign_key(user_id, users, id)
+  }
+
+  Table(follows, "follows") {
+    field(follower_id) sql(INTEGER NOT NULL)
+    field(followee_id) sql(INTEGER NOT NULL)
+    field(created_at) sql(TIMESTAMP DEFAULT function(now))
+    foreign_key(follower_id, users, id)
+    foreign_key(followee_id, users, id)
+    primary_key(follower_id, followee_id)
+  }
+  note bottom #fff: primary key ensures\none followee per folower
+
+  Table(photos_tags, "photos_tags") {
+    field(photo_id) sql(INTEGER NOT NULL)
+    field(tag_id) sql(INTEGER NOT NULL)
+    foreign_key(photo_id, photos, id)
+    foreign_key(tag_id, tags, id)
+    primary_key(photo_id, tag_id)
+  }
+  note right #fff: primary key ensures each\nphoto has unique tags
+
+  Table(tags, "tags") {
+    serial_primary_key(id)
+    field(tag_name TEXT UNIQUE)
+    field(created_at) sql(TIMESTAMP DEFAULT function(now))
+  }
+}
+
+Table(likes, "likes") {
+  field(user_id) sql(INTEGER NOT NULL)
+  field(photo_id) sql(INTEGER NOT NULL)
+  field(created_at) sql(TIMESTAMP DEFAULT function(now))
+  foreign_key(user_id, users, id)
+  foreign_key(photo_id, photos, id)
+  primary_key(user_id, photo_id)
+}
+note bottom #fff: primary key ensures\none photo like per user
+
+Table(comments, "comments") {
+  serial_primary_key(id)
+  field(user_id) sql(INTEGER NOT NULL)
+  field(photo_id) sql(INTEGER NOT NULL)
+  field(comment_text) sql(TEXT NOT NULL)
+  field(created_at) sql(TIMESTAMP DEFAULT function(now))
+  foreign_key(user_id, users, id)
+  foreign_key(photo_id, photos, id)
+}
+
+' relationships
+
+users --> photos : "A user may have\nmany photos"
+users --> comments : "A user may have\nmany comments"
+photos --> comments : "A photo may have\nmany comments"
+users --> likes : "A user may have\nmany likes"
+photos --> likes : "A photo may have\nmany likes"
+users --> follows : "A user may \nhave many follows"
+users --> follows : "A user may \nhave many followers"
+tags --> photos_tags : "A tag may be\nused in many photos"
+photos --> photos_tags : "A photo may \nhave many tags"
+
+' alignment
+
+photos_tags -[hidden]-> tags
+photos -[hidden]-> photos_tags
+photos -[hidden]-> likes
+photos -[hidden]-> comments
+
+@enduml

@@ -1,3 +1,6 @@
+CREATE SCHEMA instagram;
+SET SEARCH_PATH TO instagram;
+
 CREATE TABLE users (
   id         SERIAL PRIMARY KEY,
   username   TEXT UNIQUE NOT NULL,
@@ -46,7 +49,7 @@ CREATE TABLE tags (
   created_at TIMESTAMP DEFAULT now()
 );
 
-CREATE TABLE photo_tags (
+CREATE TABLE photos_tags (
   photo_id INTEGER NOT NULL,
   tag_id   INTEGER NOT NULL,
   FOREIGN KEY (photo_id) REFERENCES photos (id),
