@@ -1,6 +1,6 @@
 @startuml instagram
 header
-  <font color=red size=24>Simple Instagram Schema</font>
+  <font size=24>Simple Instagram Schema</font>
 endheader
 
 skinparam dpi 300
